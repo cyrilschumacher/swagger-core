@@ -6,7 +6,7 @@ import io.swagger.models.Response;
 
 import java.util.List;
 
-import javax.ws.rs.POST;
+import jakarta.ws.rs.POST;
 
 public abstract class ApiCrudRoute<T extends AbstractEntity> {
     protected List<T> service;

@@ -10,12 +10,12 @@ import io.swagger.util.Yaml;
 import java.io.IOException;
 import java.util.Set;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * The <code>ApiDeclarationServlet</code> class implements servlet which returns the Swagger definition.
@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ApiDeclarationServlet extends HttpServlet {
 
     @Override
-    public void init(ServletConfig servletConfig) throws javax.servlet.ServletException {
+    public void init(ServletConfig servletConfig) throws jakarta.servlet.ServletException {
         super.init(servletConfig);
 
         final ServletContext servletContext = servletConfig.getServletContext();

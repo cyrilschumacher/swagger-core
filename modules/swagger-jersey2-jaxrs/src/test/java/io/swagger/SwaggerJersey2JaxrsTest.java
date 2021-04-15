@@ -26,7 +26,7 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.testng.annotations.Test;
 import org.testng.internal.collections.Pair;
 
-import javax.ws.rs.BeanParam;
+import jakarta.ws.rs.BeanParam;
 import java.io.InputStream;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;

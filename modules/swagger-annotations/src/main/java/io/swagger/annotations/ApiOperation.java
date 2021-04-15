@@ -60,7 +60,7 @@ public @interface ApiOperation {
      * The response type of the operation.
      * <p>
      * In JAX-RS applications, the return type of the method would automatically be used, unless it is
-     * {@code javax.ws.rs.core.Response}. In that case, the operation return type would default to `void`
+     * {@code jakarta.ws.rs.core.Response}. In that case, the operation return type would default to `void`
      * as the actual response type cannot be known.
      * <p>
      * Setting this property would override any automatically-derived data type.

@@ -21,13 +21,14 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.validation.constraints.DecimalMax;
-import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
@@ -37,6 +38,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ParameterProcessor {
+
     static Logger LOGGER = LoggerFactory.getLogger(ParameterProcessor.class);
 
     public static Parameter applyAnnotations(Swagger swagger, Parameter parameter, Type type, List<Annotation> annotations) {
@@ -55,10 +57,10 @@ public class ParameterProcessor {
             if (param.isRequired()) {
                 p.setRequired(true);
             }
-            if(param.getReadOnly()) {
+            if (param.getReadOnly()) {
                 p.readOnly(param.getReadOnly());
             }
-            if(param.getAllowEmptyValue()) {
+            if (param.getAllowEmptyValue()) {
                 p.allowEmptyValue(param.getAllowEmptyValue());
             }
             if (StringUtils.isNotEmpty(param.getName())) {
@@ -73,13 +75,13 @@ public class ParameterProcessor {
             if (StringUtils.isNotEmpty(param.getAccess())) {
                 p.setAccess(param.getAccess());
             }
-            if(StringUtils.isNoneEmpty(param.getCollectionFormat())) {
+            if (StringUtils.isNoneEmpty(param.getCollectionFormat())) {
                 p.setCollectionFormat(param.getCollectionFormat());
             }
             if (StringUtils.isNotEmpty(param.getDataType())) {
                 if ("java.io.File".equalsIgnoreCase(param.getDataType())) {
                     p.setProperty(new FileProperty());
-                } else if("long".equalsIgnoreCase(param.getDataType())) {
+                } else if ("long".equalsIgnoreCase(param.getDataType())) {
                     p.setProperty(new LongProperty());
                 } else {
                     p.setType(param.getDataType());
@@ -120,10 +122,10 @@ public class ParameterProcessor {
             if (helper.isRequired() != null) {
                 p.setRequired(true);
             }
-            if(helper.getType() != null) {
+            if (helper.getType() != null) {
                 p.setType(helper.getType());
             }
-            if(helper.getFormat() != null) {
+            if (helper.getFormat() != null) {
                 p.setFormat(helper.getFormat());
             }
 
@@ -316,6 +318,7 @@ public class ParameterProcessor {
      */
 
     public interface ParamWrapper<T extends Annotation> {
+
         String getName();
 
         String getDescription();
@@ -349,6 +352,7 @@ public class ParameterProcessor {
         boolean getAllowEmptyValue();
 
         String getCollectionFormat();
+
     }
 
     /**
@@ -356,6 +360,7 @@ public class ParameterProcessor {
      * accessing supported parameter annotations.
      */
     private static class AnnotationsHelper {
+
         private static final ApiParam DEFAULT_API_PARAM = getDefaultApiParam(null);
         private boolean context;
         private ParamWrapper<?> apiParam = new ApiParamWrapper(DEFAULT_API_PARAM);
@@ -384,13 +389,13 @@ public class ParameterProcessor {
             String rsDefault = null;
             Size size = null;
             for (Annotation item : annotations) {
-                if ("javax.ws.rs.core.Context".equals(item.annotationType().getName())) {
+                if ("jakarta.ws.rs.core.Context".equals(item.annotationType().getName())) {
                     context = true;
                 } else if (item instanceof ApiParam) {
                     apiParam = new ApiParamWrapper((ApiParam) item);
                 } else if (item instanceof ApiImplicitParam) {
                     apiParam = new ApiImplicitParamWrapper((ApiImplicitParam) item);
-                } else if ("javax.ws.rs.DefaultValue".equals(item.annotationType().getName())) {
+                } else if ("jakarta.ws.rs.DefaultValue".equals(item.annotationType().getName())) {
                     try {
                         rsDefault = (String) item.annotationType().getMethod("value").invoke(item);
                     } catch (Exception ex) {
@@ -550,6 +555,7 @@ public class ParameterProcessor {
         public String getCollectionFormat() {
             return collectionFormat;
         }
+
     }
 
     /**
@@ -647,6 +653,7 @@ public class ParameterProcessor {
         public String getCollectionFormat() {
             return apiParam.collectionFormat();
         }
+
     }
 
     /**
@@ -743,5 +750,7 @@ public class ParameterProcessor {
         public String getCollectionFormat() {
             return apiParam.collectionFormat();
         }
+
     }
+
 }

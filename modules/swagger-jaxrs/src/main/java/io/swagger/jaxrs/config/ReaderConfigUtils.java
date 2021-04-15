@@ -2,8 +2,8 @@ package io.swagger.jaxrs.config;
 
 import org.apache.commons.lang3.StringUtils;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
 import java.util.LinkedHashSet;
 import java.util.Set;
 

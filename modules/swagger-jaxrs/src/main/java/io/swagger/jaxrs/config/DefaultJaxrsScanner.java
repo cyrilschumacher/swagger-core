@@ -1,7 +1,7 @@
 package io.swagger.jaxrs.config;
 
-import javax.servlet.ServletConfig;
-import javax.ws.rs.core.Application;
+import jakarta.servlet.ServletConfig;
+import jakarta.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
 

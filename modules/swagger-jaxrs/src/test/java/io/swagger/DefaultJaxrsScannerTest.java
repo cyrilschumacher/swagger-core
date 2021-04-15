@@ -6,7 +6,7 @@ import com.google.common.collect.Sets;
 import io.swagger.jaxrs.config.DefaultJaxrsScanner;
 import org.testng.annotations.Test;
 
-import javax.ws.rs.core.Application;
+import jakarta.ws.rs.core.Application;
 import java.util.Set;
 
 import static org.mockito.Mockito.mock;

@@ -2,7 +2,7 @@ package io.swagger.models;
 
 import java.util.List;
 
-import javax.ws.rs.QueryParam;
+import jakarta.ws.rs.QueryParam;
 
 import io.swagger.annotations.ApiModel;
 

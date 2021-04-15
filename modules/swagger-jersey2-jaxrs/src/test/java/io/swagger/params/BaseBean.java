@@ -1,7 +1,7 @@
 package io.swagger.params;
 
-import javax.ws.rs.CookieParam;
-import javax.ws.rs.FormParam;
+import jakarta.ws.rs.CookieParam;
+import jakarta.ws.rs.FormParam;
 
 /**
  * Simple Bean containing two parameters.

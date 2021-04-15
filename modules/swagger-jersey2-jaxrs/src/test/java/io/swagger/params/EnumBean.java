@@ -2,7 +2,7 @@ package io.swagger.params;
 
 import io.swagger.models.TestEnum;
 
-import javax.ws.rs.HeaderParam;
+import jakarta.ws.rs.HeaderParam;
 
 public class EnumBean {
 

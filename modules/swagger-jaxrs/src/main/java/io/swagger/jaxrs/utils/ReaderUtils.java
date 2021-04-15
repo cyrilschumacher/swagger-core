@@ -24,7 +24,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.ws.rs.core.Context;
+import jakarta.ws.rs.core.Context;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -160,7 +160,7 @@ public class ReaderUtils {
         }
     }
 
-    public static String getPath(javax.ws.rs.Path classLevelPath, javax.ws.rs.Path methodLevelPath, String parentPath, boolean isSubresource) {
+    public static String getPath(jakarta.ws.rs.Path classLevelPath, jakarta.ws.rs.Path methodLevelPath, String parentPath, boolean isSubresource) {
         if (classLevelPath == null && methodLevelPath == null && StringUtils.isEmpty(parentPath)) {
             return null;
         }

@@ -11,9 +11,9 @@ import io.swagger.models.properties.StringProperty;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import javax.ws.rs.BeanParam;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import jakarta.ws.rs.BeanParam;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
 import java.util.List;
 
 public class BeanParamTest {

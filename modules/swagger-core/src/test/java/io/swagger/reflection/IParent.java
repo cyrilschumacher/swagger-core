@@ -1,6 +1,6 @@
 package io.swagger.reflection;
 
-import javax.ws.rs.Path;
+import jakarta.ws.rs.Path;
 
 @Path("parentInterfacePath")
 @IndirectAnnotation

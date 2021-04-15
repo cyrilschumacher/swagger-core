@@ -4,7 +4,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.models.Employee;
 
-import javax.ws.rs.Path;
+import jakarta.ws.rs.Path;
 
 @Api("/employees")
 @Path("/employees")
