@@ -12,6 +12,7 @@ import java.io.IOException;
 
 import org.testng.SkipException;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 /**
@@ -21,6 +22,7 @@ import org.testng.annotations.Test;
  * uses RestAssured to define REST API tests, and Jetty's Maven plugin to serve a simple
  * sample app just prior to the integration-test phase starting.
  */
+@Ignore
 public class ApiListingResourceIT {
 
     private static final String EXPECTED_JSON = "{\n"
