@@ -42,7 +42,7 @@
                             io.swagger.jaxrs.listing
                         </Export-Package>
                         <Import-Package>
-                            javax.ws.rs*;version="[1.1,3)",
+                            jakarta.ws.rs*;version="[1.1,3)",
                             *
                         </Import-Package>
                     </instructions>
@@ -165,14 +165,13 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
         </dependency>
-        <!-- built with jsr311 but compatible with jsr311 or jsr399 in runtime -->
         <dependency>
-            <groupId>javax.ws.rs</groupId>
-            <artifactId>jsr311-api</artifactId>
-            <version>1.1.1</version>
+            <groupId>jakarta.ws.rs</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
+            <version>3.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.reflections</groupId>

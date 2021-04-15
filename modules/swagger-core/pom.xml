@@ -44,7 +44,7 @@
                             io.swagger.model,
                             io.swagger.util
                         </Export-Package>
-                        <Import-Package>javax.validation.constraints;version="[1.1,3)",*</Import-Package>
+                        <Import-Package>jakarta.validation.constraints;version="[1.1,3)",*</Import-Package>
                     </instructions>
                 </configuration>
             </plugin>
@@ -119,8 +119,8 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.immutables</groupId>
@@ -137,13 +137,13 @@
             <artifactId>commons-io</artifactId>
         </dependency>
         <dependency>
-            <groupId>javax.ws.rs</groupId>
-            <artifactId>jsr311-api</artifactId>
+            <groupId>jakarta.ws.rs</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.glassfish.hk2.external</groupId>
-            <artifactId>javax.inject</artifactId>
+            <groupId>jakarta.inject</groupId>
+            <artifactId>jakarta.inject-api</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
