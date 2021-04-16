@@ -15,12 +15,12 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.Set;
 
-import javax.validation.constraints.DecimalMax;
-import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -99,7 +99,7 @@ public class ModelResolver extends AbstractModelConverter implements ModelConver
     protected boolean shouldIgnoreClass(Type type) {
         if (type instanceof Class) {
             Class<?> cls = (Class<?>) type;
-            if (cls.getName().equals("javax.ws.rs.Response")) {
+            if (cls.getName().equals("jakarta.ws.rs.Response")) {
                 return true;
             }
         } else {
@@ -869,25 +869,25 @@ public class ModelResolver extends AbstractModelConverter implements ModelConver
                 annos.put(anno.annotationType().getName(), anno);
             }
         }
-        if (annos.containsKey("javax.validation.constraints.NotNull")) {
+        if (annos.containsKey("jakarta.validation.constraints.NotNull")) {
             property.setRequired(true);
         }
-        if (annos.containsKey("javax.validation.constraints.Min")) {
+        if (annos.containsKey("jakarta.validation.constraints.Min")) {
             if (property instanceof AbstractNumericProperty) {
-                Min min = (Min) annos.get("javax.validation.constraints.Min");
+                Min min = (Min) annos.get("jakarta.validation.constraints.Min");
                 AbstractNumericProperty ap = (AbstractNumericProperty) property;
                 ap.setMinimum(new BigDecimal(min.value()));
             }
         }
-        if (annos.containsKey("javax.validation.constraints.Max")) {
+        if (annos.containsKey("jakarta.validation.constraints.Max")) {
             if (property instanceof AbstractNumericProperty) {
-                Max max = (Max) annos.get("javax.validation.constraints.Max");
+                Max max = (Max) annos.get("jakarta.validation.constraints.Max");
                 AbstractNumericProperty ap = (AbstractNumericProperty) property;
                 ap.setMaximum(new BigDecimal(max.value()));
             }
         }
-        if (annos.containsKey("javax.validation.constraints.Size")) {
-            Size size = (Size) annos.get("javax.validation.constraints.Size");
+        if (annos.containsKey("jakarta.validation.constraints.Size")) {
+            Size size = (Size) annos.get("jakarta.validation.constraints.Size");
             if (property instanceof AbstractNumericProperty) {
                 AbstractNumericProperty ap = (AbstractNumericProperty) property;
                 ap.setMinimum(new BigDecimal(size.min()));
@@ -902,24 +902,24 @@ public class ModelResolver extends AbstractModelConverter implements ModelConver
                 sp.setMaxItems(size.max());
             }
         }
-        if (annos.containsKey("javax.validation.constraints.DecimalMin")) {
-            DecimalMin min = (DecimalMin) annos.get("javax.validation.constraints.DecimalMin");
+        if (annos.containsKey("jakarta.validation.constraints.DecimalMin")) {
+            DecimalMin min = (DecimalMin) annos.get("jakarta.validation.constraints.DecimalMin");
             if (property instanceof AbstractNumericProperty) {
                 AbstractNumericProperty ap = (AbstractNumericProperty) property;
                 ap.setMinimum(new BigDecimal(min.value()));
                 ap.setExclusiveMinimum(!min.inclusive());
             }
         }
-        if (annos.containsKey("javax.validation.constraints.DecimalMax")) {
-            DecimalMax max = (DecimalMax) annos.get("javax.validation.constraints.DecimalMax");
+        if (annos.containsKey("jakarta.validation.constraints.DecimalMax")) {
+            DecimalMax max = (DecimalMax) annos.get("jakarta.validation.constraints.DecimalMax");
             if (property instanceof AbstractNumericProperty) {
                 AbstractNumericProperty ap = (AbstractNumericProperty) property;
                 ap.setMaximum(new BigDecimal(max.value()));
                 ap.setExclusiveMaximum(!max.inclusive());
             }
         }
-        if (annos.containsKey("javax.validation.constraints.Pattern")) {
-            Pattern pattern = (Pattern) annos.get("javax.validation.constraints.Pattern");
+        if (annos.containsKey("jakarta.validation.constraints.Pattern")) {
+            Pattern pattern = (Pattern) annos.get("jakarta.validation.constraints.Pattern");
             if (property instanceof StringProperty) {
                 StringProperty ap = (StringProperty) property;
                 ap.setPattern(pattern.regexp());

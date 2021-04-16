@@ -214,7 +214,7 @@ public class SimpleReaderTest {
         assertNull(response.getResponseSchema());
     }
 
-    @Test(description = "scan a resource with javax.ws.core.Response ")
+    @Test(description = "scan a resource with jakarta.ws.core.Response ")
     public void scanResourceWithResponse() {
         assertNull(getSwagger(ResourceWithResponse.class).getDefinitions());
     }

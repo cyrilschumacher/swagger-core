@@ -2,7 +2,7 @@ package com.subresourcesTest;
 
 import io.swagger.annotations.Api;
 
-import javax.ws.rs.Path;
+import jakarta.ws.rs.Path;
 
 /**
  * Created by rbolles on 1/20/16.

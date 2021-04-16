@@ -17,11 +17,11 @@ import io.swagger.models.properties.StringProperty;
 import io.swagger.util.Json;
 import io.swagger.util.ParameterProcessor;
 
-import javax.ws.rs.CookieParam;
-import javax.ws.rs.FormParam;
-import javax.ws.rs.HeaderParam;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.QueryParam;
+import jakarta.ws.rs.CookieParam;
+import jakarta.ws.rs.FormParam;
+import jakarta.ws.rs.HeaderParam;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.QueryParam;
 
 import com.fasterxml.jackson.databind.BeanDescription;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -41,7 +41,7 @@ public class DefaultParameterExtension extends AbstractSwaggerExtension {
     private static Class<?> CLASS_BEAN_PARAM;
     static {
         try {
-            CLASS_BEAN_PARAM = Class.forName("javax.ws.rs.BeanParam", true, DefaultParameterExtension.class.getClassLoader());
+            CLASS_BEAN_PARAM = Class.forName("jakarta.ws.rs.BeanParam", true, DefaultParameterExtension.class.getClassLoader());
         } catch (Throwable t) {
             //ignore and assume no jsr399-api on classpath
         }
@@ -202,7 +202,7 @@ public class DefaultParameterExtension extends AbstractSwaggerExtension {
 
     @Override
     protected boolean shouldIgnoreClass(Class<?> cls) {
-        return cls.getName().startsWith("javax.ws.rs.");
+        return cls.getName().startsWith("jakarta.ws.rs.");
     }
 
     private Property createProperty(Type type) {

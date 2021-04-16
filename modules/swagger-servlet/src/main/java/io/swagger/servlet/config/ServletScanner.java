@@ -4,7 +4,7 @@ import io.swagger.annotations.Api;
 import io.swagger.config.Scanner;
 import org.reflections.Reflections;
 
-import javax.servlet.ServletConfig;
+import jakarta.servlet.ServletConfig;
 import java.util.Set;
 
 public class ServletScanner implements Scanner {

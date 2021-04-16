@@ -1,6 +1,6 @@
 package com.splitresourcesTestImpl;
 
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response;
 
 import com.splitresourcesTest.SplitResource;
 

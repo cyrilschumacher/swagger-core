@@ -4,8 +4,8 @@ import java.lang.annotation.Annotation;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.servlet.ServletConfig;
-import javax.ws.rs.Path;
+import jakarta.servlet.ServletConfig;
+import jakarta.ws.rs.Path;
 
 import org.apache.commons.lang3.StringUtils;
 import org.reflections.Reflections;
@@ -286,7 +286,7 @@ public class BeanConfig extends AbstractScanner implements Scanner, SwaggerConfi
         config.setScanners(new ResourcesScanner(), new TypeAnnotationsScanner(), new SubTypesScanner());
 
         final Reflections reflections = new Reflections(config);
-        Set<Class<?>> classes = reflections.getTypesAnnotatedWith(javax.ws.rs.Path.class);
+        Set<Class<?>> classes = reflections.getTypesAnnotatedWith(jakarta.ws.rs.Path.class);
         Set<Class<?>> typesAnnotatedWith = reflections.getTypesAnnotatedWith(SwaggerDefinition.class);
 				classes.addAll(typesAnnotatedWith);
         
@@ -297,7 +297,7 @@ public class BeanConfig extends AbstractScanner implements Scanner, SwaggerConfi
          */
         for (Class<?> cls : reflections.getTypesAnnotatedWith(Api.class)) {
         	for (Class<?> intfc : TypeToken.of(cls).getTypes().interfaces().rawTypes()) {
-        		Annotation ann = intfc.getAnnotation(javax.ws.rs.Path.class);
+        		Annotation ann = intfc.getAnnotation(jakarta.ws.rs.Path.class);
         		if (ann != null) {
         			classes.add(cls);
         			break;

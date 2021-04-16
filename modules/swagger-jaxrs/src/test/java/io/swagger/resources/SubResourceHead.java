@@ -3,7 +3,7 @@ package io.swagger.resources;
 import io.swagger.annotations.Api;
 import io.swagger.jaxrs.Reader;
 
-import javax.ws.rs.Path;
+import jakarta.ws.rs.Path;
 
 @Api
 @Path("/head")

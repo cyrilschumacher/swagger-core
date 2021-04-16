@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>io.swagger</groupId>
+        <groupId>io.github.cyrilschumacher</groupId>
         <artifactId>swagger-project</artifactId>
-        <version>1.6.2</version>
+        <version>1.6.3</version>
         <relativePath>../..</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.swagger</groupId>
+    <groupId>io.github.cyrilschumacher</groupId>
     <artifactId>swagger-annotations</artifactId>
-    <version>1.6.2</version>
+    <version>1.6.3</version>
     <packaging>bundle</packaging>
     <name>swagger-annotations</name>
     <build>
@@ -108,7 +108,7 @@
                             <checkinComment>Publishing javadoc for ${project.artifactId}:${project.version}</checkinComment>
                             <content>${project.build.directory}/javadocprep</content>
                             <skipDeletedFiles>true</skipDeletedFiles>
-                            <pubScmUrl>scm:git:https://github.com/swagger-api/swagger-core</pubScmUrl>
+                            <pubScmUrl>scm:git:https://github.com/cyrilschumacher/swagger-core</pubScmUrl>
                             <scmBranch>gh-pages</scmBranch>
                         </configuration>
                         <executions>

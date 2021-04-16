@@ -1,11 +1,11 @@
 package io.swagger.jaxrs.config;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.http.HttpServlet;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.http.HttpServlet;
 
 public class DefaultJaxrsConfig extends HttpServlet {
     @Override
-    public void init(ServletConfig servletConfig) throws javax.servlet.ServletException {
+    public void init(ServletConfig servletConfig) throws jakarta.servlet.ServletException {
         super.init(servletConfig);
         String basePath = null;
         if (SwaggerContextService.isServletConfigAvailable(servletConfig)) {

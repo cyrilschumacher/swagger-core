@@ -5,8 +5,8 @@ import io.swagger.jaxrs.listing.ApiListingResource;
 import io.swagger.models.Swagger;
 import org.testng.annotations.Test;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
 import java.util.Enumeration;
 
 import static org.testng.Assert.assertNull;

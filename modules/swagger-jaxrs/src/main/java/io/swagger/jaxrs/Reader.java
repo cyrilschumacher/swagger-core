@@ -77,9 +77,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.HttpMethod;
-import javax.ws.rs.Produces;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.HttpMethod;
+import jakarta.ws.rs.Produces;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
@@ -213,7 +213,7 @@ public class Reader {
 
         Api api = ReflectionUtils.getAnnotation(cls, Api.class);
 
-        boolean hasPathAnnotation = (ReflectionUtils.getAnnotation(cls, javax.ws.rs.Path.class) != null);
+        boolean hasPathAnnotation = (ReflectionUtils.getAnnotation(cls, jakarta.ws.rs.Path.class) != null);
         boolean hasApiAnnotation = (api != null);
         boolean isApiHidden = hasApiAnnotation && api.hidden();
 
@@ -299,7 +299,7 @@ public class Reader {
             }
 
             // parse the method
-            final javax.ws.rs.Path apiPath = ReflectionUtils.getAnnotation(cls, javax.ws.rs.Path.class);
+            final jakarta.ws.rs.Path apiPath = ReflectionUtils.getAnnotation(cls, jakarta.ws.rs.Path.class);
             JavaType classType = TypeFactory.defaultInstance().constructType(cls);
             BeanDescription bd = new ObjectMapper().getSerializationConfig().introspect(classType);
             Method methods[] = cls.getMethods();
@@ -308,7 +308,7 @@ public class Reader {
                 if (ReflectionUtils.isOverriddenMethod(method, cls)) {
                     continue;
                 }
-                javax.ws.rs.Path methodPath = ReflectionUtils.getAnnotation(method, javax.ws.rs.Path.class);
+                jakarta.ws.rs.Path methodPath = ReflectionUtils.getAnnotation(method, jakarta.ws.rs.Path.class);
 
                 String operationPath = ReaderUtils.getPath(apiPath, methodPath, parentPath, isSubresource);
                 Map<String, String> regexMap = new LinkedHashMap<String, String>();
@@ -687,7 +687,7 @@ public class Reader {
             type = rawType;
         }
 
-        if (method.getAnnotation(javax.ws.rs.Path.class) != null) {
+        if (method.getAnnotation(jakarta.ws.rs.Path.class) != null) {
             if (extractOperationMethod(null, method, null) == null) {
                 return type;
             }
@@ -1053,17 +1053,17 @@ public class Reader {
     public String extractOperationMethod(ApiOperation apiOperation, Method method, Iterator<SwaggerExtension> chain) {
         if (apiOperation != null && !"".equals(apiOperation.httpMethod())) {
             return apiOperation.httpMethod().toLowerCase();
-        } else if (method.getAnnotation(javax.ws.rs.GET.class) != null) {
+        } else if (method.getAnnotation(jakarta.ws.rs.GET.class) != null) {
             return "get";
-        } else if (method.getAnnotation(javax.ws.rs.PUT.class) != null) {
+        } else if (method.getAnnotation(jakarta.ws.rs.PUT.class) != null) {
             return "put";
-        } else if (method.getAnnotation(javax.ws.rs.POST.class) != null) {
+        } else if (method.getAnnotation(jakarta.ws.rs.POST.class) != null) {
             return "post";
-        } else if (method.getAnnotation(javax.ws.rs.DELETE.class) != null) {
+        } else if (method.getAnnotation(jakarta.ws.rs.DELETE.class) != null) {
             return "delete";
-        } else if (method.getAnnotation(javax.ws.rs.OPTIONS.class) != null) {
+        } else if (method.getAnnotation(jakarta.ws.rs.OPTIONS.class) != null) {
             return "options";
-        } else if (method.getAnnotation(javax.ws.rs.HEAD.class) != null) {
+        } else if (method.getAnnotation(jakarta.ws.rs.HEAD.class) != null) {
             return "head";
         } else if (method.getAnnotation(PATCH.class) != null) {
             return "patch";
@@ -1140,7 +1140,7 @@ public class Reader {
             return false;
         }
         final Class<?> cls = javaType.getRawClass();
-        return !javax.ws.rs.core.Response.class.isAssignableFrom(cls) && !isResourceClass(cls);
+        return !jakarta.ws.rs.core.Response.class.isAssignableFrom(cls) && !isResourceClass(cls);
     }
 
     private static boolean isResourceClass(Class<?> cls) {
