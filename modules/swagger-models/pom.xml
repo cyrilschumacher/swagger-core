@@ -2,7 +2,7 @@
 	xmlns="http://maven.apache.org/POM/4.0.0"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-        <groupId>io.swagger</groupId>
+        <groupId>io.github.cyrilschumacher</groupId>
         <artifactId>swagger-project</artifactId>
         <version>1.6.2</version>
         <relativePath>../..</relativePath>
@@ -59,7 +59,7 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.swagger</groupId>
+            <groupId>io.github.cyrilschumacher</groupId>
             <artifactId>swagger-annotations</artifactId>
             <version>${project.parent.version}</version>
             <scope>compile</scope>
