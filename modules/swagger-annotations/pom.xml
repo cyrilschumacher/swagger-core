@@ -108,7 +108,7 @@
                             <checkinComment>Publishing javadoc for ${project.artifactId}:${project.version}</checkinComment>
                             <content>${project.build.directory}/javadocprep</content>
                             <skipDeletedFiles>true</skipDeletedFiles>
-                            <pubScmUrl>scm:git:https://github.com/swagger-api/swagger-core</pubScmUrl>
+                            <pubScmUrl>scm:git:https://github.com/cyrilschumacher/swagger-core</pubScmUrl>
                             <scmBranch>gh-pages</scmBranch>
                         </configuration>
                         <executions>
