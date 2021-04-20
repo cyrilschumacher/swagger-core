@@ -1,7 +1,7 @@
 # Swagger Core library
 
-[![Build Status](https://img.shields.io/jenkins/s/https/jenkins.swagger.io/view/OSS%20-%20Java/job/oss-swagger-core-1.5.svg)](https://jenkins.swagger.io/view/OSS%20-%20Java/job/oss-swagger-core-1.5)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.swagger/swagger-project/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/io.swagger/swagger-project)
+[![Build Status](https://travis-ci.org/cyrilschumacher/swagger-core.svg?branch=master)](https://travis-ci.org/cyrilschumacher/swagger-core)
+![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/io.github.cyrilschumacher/swagger-servlet?server=https%3A%2F%2Fs01.oss.sonatype.org%2F)
 
 Javadocs for annotations with the current release are [available online](http://docs.swagger.io/swagger-core/current/apidocs/index.html).
 
