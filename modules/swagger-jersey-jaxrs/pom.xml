@@ -3,13 +3,13 @@
     <parent>
         <groupId>io.github.cyrilschumacher</groupId>
         <artifactId>swagger-project</artifactId>
-        <version>1.6.3</version>
+        <version>1.6.4</version>
         <relativePath>../..</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>swagger-jersey-jaxrs</artifactId>
     <packaging>jar</packaging>
-    <version>1.6.3</version>
+    <version>1.6.4</version>
     <name>swagger-jersey-jaxrs</name>
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
